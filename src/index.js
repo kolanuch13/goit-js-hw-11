@@ -34,8 +34,9 @@ const updatePage = (() => {
     myRequest.fetchImages()
         .then(images => {
             refs.gallery.insertAdjacentHTML('beforeend', templateFunction(images));
+            let lightbox = new simpleLightbox('.gallery a', { /* options */ });
         });
-})
+    })
 
 refs.form.addEventListener('submit', makePage);
 
@@ -44,3 +45,5 @@ window.addEventListener('scroll', () => {
         updatePage();
     }
 })
+
+// let lightbox = new simpleLightbox('.gallery a', { /* options */ });
