@@ -7,6 +7,7 @@ const myRequest = new ImageApiService();
 
 const refs = {
     form: document.querySelector('.search-form'),
+    type: document.querySelector('.search-form-type'),
     input: document.querySelector('.search-form-input'),
     button: document.querySelector('.search-form-button'),
     list: document.querySelector('.image-list'),
@@ -17,6 +18,7 @@ const makePage = (event => {
     event.preventDefault();
 
     myRequest.query = refs.input.value;
+    myRequest.type = refs.type.value;
     myRequest.resPage();
     myRequest.fetchImages()
     .then(images => {
