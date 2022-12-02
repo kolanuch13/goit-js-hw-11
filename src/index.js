@@ -7,18 +7,17 @@ const myRequest = new ImageApiService();
 
 const refs = {
     form: document.querySelector('.search-form'),
-    type: document.querySelector('.search-form-type'),
     input: document.querySelector('.search-form-input'),
     button: document.querySelector('.search-form-button'),
     list: document.querySelector('.image-list'),
-    gallery: document.querySelector('.gallery')
+    gallery: document.querySelector('.gallery'),
 }
- 
+
 const makePage = (event => {
     event.preventDefault();
-
+    
     myRequest.query = refs.input.value;
-    myRequest.type = refs.type.value;
+    myRequest.type = document.querySelector('input[name="image_type"]:checked').value;
     myRequest.resPage();
     myRequest.fetchImages()
     .then(images => {
@@ -34,11 +33,11 @@ const makePage = (event => {
 const updatePage = (() => {
     myRequest.addPage();
     myRequest.fetchImages()
-        .then(images => {
-            refs.gallery.insertAdjacentHTML('beforeend', templateFunction(images));
-            let lightbox = new simpleLightbox('.gallery a', { /* options */ });
-        });
-    })
+    .then(images => {
+        refs.gallery.insertAdjacentHTML('beforeend', templateFunction(images));
+        let lightbox = new simpleLightbox('.gallery a', { /* options */ });
+    });
+})
 
 refs.form.addEventListener('submit', makePage);
 
@@ -47,5 +46,3 @@ window.addEventListener('scroll', () => {
         updatePage();
     }
 })
-
-// let lightbox = new simpleLightbox('.gallery a', { /* options */ });

@@ -18,7 +18,6 @@ export default class ImageApiService {
         const URL = `https://pixabay.com/api/?key=${API_KEY}&q=${this.searchQuery}&${params}`;
 
         const responce = await axios.get(URL);
-        console.log(responce);
         return await responce.data.hits;
     }
 

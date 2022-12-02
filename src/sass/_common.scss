@@ -12,13 +12,13 @@ ul {
     height: 60px;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: var(--back-color);
     &-input{
         padding: 3px;
-
+        height: var(--height);
         border-top: none;
         border-left: none;
         border-right: none;
@@ -43,6 +43,7 @@ ul {
     }
 
     &-button {
+        height: var(--height);
         padding: 3px;
         border-top: none;
         border-left: none;
@@ -58,6 +59,49 @@ ul {
         color: var(--accent-color);
         border-bottom: 1px solid var(--accent-color);
         transition-duration: 500ms;
+    }
+
+    &-radio {
+        position: relative;
+        width: 50%;
+        height: var(--height);
+        background-color: var(--smoke-white);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &-button {
+            height: var(--height);
+            position: relative;
+            flex-basis: calc(70% / 3);
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &-type {
+            appearance: none;
+            display: none;
+
+            &:checked + .search-form-radio-text {
+                // background-color: var(--green-color);
+                color: var(--accent-color);
+                border-bottom: 1px solid var(--accent-color);
+            }
+        }
+
+        &-text {
+            height: var(--height);
+            padding: 3px;
+            position: relative;
+            width: 100%;
+            text-align: center;
+            transition-property: transform, color, box-shadow;
+            transform: none;
+            color: black;
+            border-bottom: 1px solid black;
+        }
     }
 
 }
@@ -129,7 +173,7 @@ ul {
     }
 
     &-svg {
-        fill: #576362;
+        fill: var(--green-color);
         width: 13px;
         height: 13px;
     

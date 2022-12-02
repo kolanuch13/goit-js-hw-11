@@ -1,15 +1,22 @@
 <form class="search-form" id="search-form">
-    <input class="search-form-type" type="radio" id="all" name="image_type" value="all">
-    <label for="all">All</label>
-
-    <input class="search-form-type" type="radio" id="photo" name="image_type" value="photo">
-    <label for="photo">Photo</label>
-
-    <input class="search-form-type" type="radio" id="illustration" name="image_type" value="illustration">
-    <label for="illustration">Illustration</label>
-
-    <input class="search-form-type" type="radio" id="vector" name="image_type" value="vector">
-    <label for="vector">Vector</label>
+    <div class="search-form-radio">
+        <div class="search-form-radio-button">
+            <input class="search-form-radio-type" type="radio" id="all" name="image_type" value="all" checked>
+            <label class="search-form-radio-text" for="all">All</label>
+        </div>
+        <div class="search-form-radio-button">
+            <input class="search-form-radio-type" type="radio" id="photo" name="image_type" value="photo">
+            <label class="search-form-radio-text" for="photo">Photo</label>
+        </div>
+        <div class="search-form-radio-button">
+            <input class="search-form-radio-type" type="radio" id="illustration" name="image_type" value="illustration">
+            <label class="search-form-radio-text" for="illustration">Illustration</label>
+        </div>
+        <div class="search-form-radio-button">
+            <input class="search-form-radio-type" type="radio" id="vector" name="image_type" value="vector">
+            <label class="search-form-radio-text" for="vector">Vector</label>
+        </div>
+    </div>
     
     <input class="search-form-input" type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
     <button class="search-form-button" type="submit">Search</button>
